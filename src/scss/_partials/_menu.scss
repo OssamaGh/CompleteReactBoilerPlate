@@ -1,0 +1,200 @@
+/****************************
+Menu
+****************************/
+
+.floating-menu {
+    z-index: 999;
+    background: white;
+    position: fixed;
+    width: -webkit-fill-available;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+.menu-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    color: $primary-color;
+    font-family: "HK Grotesk Bold";
+    font-size: 2.5em;
+}
+
+.list-style-none {
+    list-style-type: none;
+}
+
+.menu-item {
+    margin: 4px 0px;
+
+    a {
+        text-decoration: none;
+        color: $primary-color;
+    }
+
+    a:hover {
+        color: $secondary-color;
+        transition: 700ms;
+    }
+}
+
+.menu_trigger-open {
+    max-height: 100%;
+    margin: 1em;
+    padding: 20px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.menu_trigger-close {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s,
+        opacity 0.5s linear;
+}
+
+.a__hamburger {
+    display: -webkit-inline-box;
+    margin: 0;
+    height: 20px;
+    width: 26px;
+    position: relative;
+    cursor: pointer;
+
+    .a__hamburger_top,
+    .a__hamburger_medium,
+    .a__hamburger_bottom {
+        position: absolute;
+        width: 100%;
+        border-bottom: 2px solid $primary-color;
+    }
+
+    .a__hamburger_top {
+        top: 0;
+        transition: top 0.2s ease;
+    }
+
+    .a__hamburger_medium {
+        top: 9px;
+        transition: opacity 0.1s ease;
+        width: 80%;
+        margin-left: 6%;
+    }
+
+    .a__hamburger_bottom {
+        bottom: 0;
+        transition: bottom 0.2s ease;
+    }
+
+    .a__hamburger_text {
+        position: absolute;
+        top: 3px;
+        font-size: 12px;
+        transition: opacity 0.1s ease;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &:hover {
+        .a__hamburger_top {
+            top: -2px;
+        }
+
+        .a__hamburger_bottom {
+            bottom: -2px;
+        }
+
+        .a__hamburger_medium {
+            opacity: 0;
+        }
+
+        .a__hamburger_text {
+            opacity: 1;
+        }
+    }
+}
+
+.menu-close {
+    width: 25px;
+    height: 25px;
+    background: url('../images/icons/close-icon.png');
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+}
+
+/****************************
+Social Media
+****************************/
+
+.social-media {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+}
+
+.social-media-header {
+    text-align: -webkit-center;
+    font-family: 'HK Grotesk Light';
+}
+
+.social-media-icon {
+    width: 40px;
+    height: 40px;
+    background-size: 2.5em;
+    float: left;
+    margin-right: 20px;
+}
+
+.facebook {
+    background-image: url('../images/icons/social-media/fb-dark.png');
+    background-repeat: no-repeat;
+}
+
+.twitter {
+    background-image: url('../images/icons/social-media/twitter-dark.png');
+    background-repeat: no-repeat;
+}
+
+.instagram {
+    background-image: url('../images/icons/social-media/insta-dark.png');
+    background-repeat: no-repeat;
+}
+
+.youtube {
+    background-image: url('../images/icons/social-media/yt-dark.png');
+    background-repeat: no-repeat;
+}
+
+.linkedin {
+    background-image: url('../images/icons/social-media/linkedin-dark.png');
+    background-repeat: no-repeat;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 768px) {
+    .menu-list {
+        font-size: 1.5em;
+    }
+
+    .social-media-icon {
+        width: 30px;
+        height: 30px;
+        background-size: 1.5em;
+        margin-right: 0px;
+    }
+}
